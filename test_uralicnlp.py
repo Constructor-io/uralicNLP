@@ -9,7 +9,7 @@ import re
 from mikatools import *
 
 from uralicNLP.llm import get_llm, disambiguate_sentence
-from uralicNLP import semantics
+#from uralicNLP import semantics
 
 #print(uralicApi.get_all_forms("kissa", "N", "fin"))
 
@@ -153,6 +153,9 @@ print(uralicApi.generate("koirailla+V+Act+Ind+Prs+Sg1", "fin", neural_fallback=T
 print(uralicApi.analyze("juoksen", "fin", neural_fallback=True))
 
 """
+
+#print(uralicApi.analyze("тонь", "sms"))
+
 
 print(uralicApi.get_translation("piânnai", "sms"))
 #uralicApi.import_dictionary_to_db("sms")
