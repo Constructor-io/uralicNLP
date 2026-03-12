@@ -6,6 +6,7 @@ It supports:
 - analyze: morphological analysis (lemma+tags)
 - generate: inflect/generate surface forms from full analysis string
 - lemmatize: lemmatize a word
+- translate: look up translations for a lemma
 
 All outputs are JSON to make them easy to consume.
 """
@@ -23,6 +24,8 @@ LANG = "sms"
 SCRIPT_DIR = Path(__file__).resolve().parent
 ANALYZER_PATH = SCRIPT_DIR / "analyser-gt-desc.hfstol"
 GENERATOR_PATH = SCRIPT_DIR / "generator-gt-norm.hfstol"
+DICT1_PATH = SCRIPT_DIR / "dict1.hfstol"
+DICT2_PATH = SCRIPT_DIR / "dict2.hfstol"
 
 
 def _require_uralicnlp():
@@ -72,6 +75,19 @@ def cmd_lemmatize(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_translate(args: argparse.Namespace) -> int:
+    uralicApi = _require_uralicnlp()
+    lemma = args.lemma
+    translations = uralicApi.get_translation(
+        lemma,
+        LANG,
+        filename1=_require_model(DICT1_PATH),
+        filename2=_require_model(DICT2_PATH),
+    ) or []
+    _json_print(translations)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="uralic_cli",
@@ -90,6 +106,10 @@ def build_parser() -> argparse.ArgumentParser:
     l = sub.add_parser("lemmatize", help="lemmatize a Skolt Sami word")
     l.add_argument("--word", required=True)
     l.set_defaults(func=cmd_lemmatize)
+
+    t = sub.add_parser("translate", help="translate a Skolt Sami lemma")
+    t.add_argument("--lemma", required=True)
+    t.set_defaults(func=cmd_translate)
 
     return p
 
