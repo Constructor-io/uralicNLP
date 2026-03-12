@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Command-line interface for offline Skolt Sami processing with UralicNLP.
+"""Command-line interface for offline __LANG_NAME__ processing with UralicNLP.
 
 This script is intended to be invoked by ChatGPT while using the skill.
 It supports:
@@ -20,7 +20,7 @@ import sys
 from typing import Any
 
 
-LANG = "sms"
+LANG = "__LANG_ISO__"
 SCRIPT_DIR = Path(__file__).resolve().parent
 ANALYZER_PATH = SCRIPT_DIR / "analyser-gt-desc.hfstol"
 GENERATOR_PATH = SCRIPT_DIR / "generator-gt-norm.hfstol"
@@ -91,23 +91,23 @@ def cmd_translate(args: argparse.Namespace) -> int:
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="uralic_cli",
-        description="Offline Skolt Sami morphology with bundled UralicNLP HFST-OL models",
+        description="Offline __LANG_NAME__ morphology with bundled UralicNLP HFST-OL models",
     )
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    a = sub.add_parser("analyze", help="Skolt Sami morphological analysis")
+    a = sub.add_parser("analyze", help="__LANG_NAME__ morphological analysis")
     a.add_argument("--word", required=True)
     a.set_defaults(func=cmd_analyze)
 
-    g = sub.add_parser("generate", help="generate Skolt Sami surface forms")
+    g = sub.add_parser("generate", help="generate __LANG_NAME__ surface forms")
     g.add_argument("--inflection", required=True, help="full analysis string, e.g. kuätt+N+Sg+Gen")
     g.set_defaults(func=cmd_generate)
 
-    l = sub.add_parser("lemmatize", help="lemmatize a Skolt Sami word")
+    l = sub.add_parser("lemmatize", help="lemmatize a __LANG_NAME__ word")
     l.add_argument("--word", required=True)
     l.set_defaults(func=cmd_lemmatize)
 
-    t = sub.add_parser("translate", help="translate a Skolt Sami lemma")
+    t = sub.add_parser("translate", help="translate a __LANG_NAME__ lemma")
     t.add_argument("--lemma", required=True)
     t.set_defaults(func=cmd_translate)
 

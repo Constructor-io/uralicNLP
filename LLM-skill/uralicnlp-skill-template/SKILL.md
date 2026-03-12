@@ -1,9 +1,9 @@
 ---
-name: uralicnlp-sms
-description: morphologically analyze, lemmatize, translate, and generate Skolt Sami words offline with bundled UralicNLP. Use when the user asks about Skolt Sami (`sms`) lemma forms, morphological tags, translations, or inflection/generation from an analysis string.
+name: uralicnlp-__LANG_ISO__
+description: morphologically analyze, lemmatize, translate, and generate __LANG_NAME__ words offline with bundled UralicNLP. Use when the user asks about __LANG_NAME__ (`__LANG_ISO__`) lemma forms, morphological tags, translations, or inflection/generation from an analysis string.
 ---
 
-# Skolt Sami morphology
+# __LANG_NAME__ morphology
 
 ## Quick start
 
@@ -42,7 +42,7 @@ python scripts/uralic_cli.py translate --lemma mieʹcc
 ### Inputs to request (only when missing)
 - **word** or **inflection string**
 - **lemma** for translations
-- The language is fixed to **Skolt Sami** (`sms`); do not ask the user to choose another language.
+- The language is fixed to **__LANG_NAME__** (`__LANG_ISO__`); do not ask the user to choose another language.
 
 ### Output conventions
 - Prefer returning:
@@ -55,8 +55,8 @@ python scripts/uralic_cli.py translate --lemma mieʹcc
 
 ## Script reference
 - `scripts/uralic_cli.py`: main entrypoint. Use it instead of rewriting code in-chat.
-- `scripts/analyser-gt-desc.hfstol`: bundled Skolt Sami analyzer model.
-- `scripts/dict1.hfstol`: first bundled Skolt Sami translation dictionary.
-- `scripts/dict2.hfstol`: second bundled Skolt Sami translation dictionary.
-- `scripts/generator-gt-norm.hfstol`: bundled Skolt Sami generator model.
+- `scripts/analyser-gt-desc.hfstol`: bundled __LANG_NAME__ analyzer model.
+- `scripts/dict1.hfstol`: first bundled __LANG_NAME__ translation dictionary.
+- `scripts/dict2.hfstol`: second bundled __LANG_NAME__ translation dictionary.
+- `scripts/generator-gt-norm.hfstol`: bundled __LANG_NAME__ generator model.
 - `scripts/requirements.txt`: dependency list.

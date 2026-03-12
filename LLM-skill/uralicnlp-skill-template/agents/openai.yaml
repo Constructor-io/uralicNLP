@@ -1,6 +1,6 @@
 version: 1
 interface:
-  display_name: "UralicNLP for Skolt Sami"
-  short_description: "Analyze, lemmatize, and inflect Skolt Sami with UralicNLP by Mika Hämäläinen"
+  display_name: "UralicNLP for __LANG_NAME__"
+  short_description: "Analyze, lemmatize, translate, and inflect __LANG_NAME__ with UralicNLP by Mika Hämäläinen"
   icon: "globe"
   color: "#2E7D32"
