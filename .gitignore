@@ -12,3 +12,4 @@ tools/dictionaries/*
 *.hfst
 *.hfstol
 
+LLM-skill/build/*
