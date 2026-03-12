@@ -24,6 +24,12 @@ The library can be installed from [PyPi](https://pypi.python.org/pypi/uralicNLP/
    
 If you want to use the Constraint Grammar features (*from uralicNLP.cg3 import Cg3*), you will also need to install VISL CG-3.
 
+## Use UralicNLP in ChatGPT!
+
+<img width="90%" alt="image" src="https://github.com/user-attachments/assets/35b13a85-40a5-40d5-be88-6c36891f8301" />
+
+UralicNLP skills are available for ChatGPT. [Download yours today!](https://github.com/mikahama/uralicNLP/wiki/UralicNLP-Skill-for-ChatGPT)
+
 ## MCP
 
 Who said LLMs don't speak endangered languages? UralicNLP now supports MCP! Connect UralicNLP main functionality directly to your favorite MCP supporting LLM! [Read more in the UralicMCP wiki](https://github.com/mikahama/uralicNLP/wiki/UralicMCP).
