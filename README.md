@@ -106,6 +106,12 @@ This section has been moved to [UralicNLP wiki page on disambiguation](https://g
 
 ## Dictionaries
 
+You can get translations for minority language words easily with the following code:
+
+     from uralicNLP import uralicApi   
+     uralicApi.get_translation("piânnai", "sms")
+     >> {'sme': ['beana'], 'sjd': ['пе̄ннэ'], 'sju': ['biegˈŋja', 'dä̀rra'], 'rus': ['собака'], 'nob': ['hund'], 'eng': ['dog'], 'deu': ['Hund'], 'fin': ['koira']}
+
 Learn more about dictionaries in [the wiki page on dictionaries](https://github.com/mikahama/uralicNLP/wiki/Dictionaries).
 
 ## Parsing UD CoNLL-U annotated TreeBank data
